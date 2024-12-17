@@ -1,101 +1,53 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <div className="h-screen bg-slate-300">
+      <h1 className="text-center py-8 text-6xl text-white font-serif font-extrabold italic bg-gradient-to-r from-rose-500 from-10% via-red-700 via-50% to-rose-500 to-90%" >INTEGRAL FLASHCARDS</h1>
+      <div className="text-center text-xl font-serif m-4 underline decoration-black decoration-2">Table of Integrals taken from
+        <a className="italic font-semibold" href="https://www.physics.umd.edu/hep/drew/IntegralTable.pdf" target="_blank"> HERE</a>
+      </div>
+      <h3 className="pt-24 text-center text-2xl font-semibold font-serif">Select Which Kind of Integrals to Show</h3>
+      <div className="grid grid-cols-5 content-center justify-items-center py-24 mx-24 my-2 bg-white">
+        <label className="bg-gradient-to-tr from-red-600 to-orange-600 rounded text-lg p-3 m-2 mb-12 text-white align-middle">
+          <input className="appearance-none mr-4 border-2 border-black w-5 h-5 rounded-lg bg-white checked:bg-slate-500 align-middle" type="checkbox" name="Basic Forms" />
+          Basic Forms
+        </label>
+        <label className="bg-gradient-to-tr from-red-600 to-orange-600 rounded text-lg p-3 m-2 mb-12 text-white">
+          <input className="appearance-none mr-4 border-2 border-black w-5 h-5 rounded-lg bg-white checked:bg-slate-500 align-middle"  type="checkbox" name="Rational Function" />
+          Rational Function
+        </label>
+        <label className="bg-gradient-to-tr from-red-600 to-orange-600 rounded text-lg p-3 m-2 mb-12 text-white">
+          <input className="appearance-none mr-4 border-2 border-black w-5 h-5 rounded-lg bg-white checked:bg-slate-500 align-middle"  type="checkbox" name="Integral with Roots" />
+          Integral with Roots
+        </label>
+        <label className="bg-gradient-to-tr from-red-600 to-orange-600 rounded text-lg p-3 m-2 mb-12 text-white">
+          <input className="appearance-none mr-4 border-2 border-black w-5 h-5 rounded-lg bg-white checked:bg-slate-500 align-middle"  type="checkbox" name="Logarithms" />
+          Logarithms
+        </label>
+        <label className="bg-gradient-to-tr from-red-600 to-orange-600 rounded text-lg p-3 m-2 mb-12 text-white">
+          <input className="appearance-none mr-4 border-2 border-black w-5 h-5 rounded-lg bg-white checked:bg-slate-500 align-middle"  type="checkbox" name="Exponentials" />
+          Exponentials
+        </label>
+        <label className="bg-gradient-to-tr from-red-600 to-orange-600 rounded text-lg p-3 m-2 mt-12 text-white">
+          <input className="appearance-none mr-4 border-2 border-black w-5 h-5 rounded-lg bg-white checked:bg-slate-500 align-middle"  type="checkbox" name="Trigonometric Functions" />
+          Trigonometric Functions
+        </label>
+        <label className="bg-gradient-to-tr from-red-600 to-orange-600 rounded text-lg p-3 m-2 mt-12 text-white">
+          <input className="appearance-none mr-4 border-2 border-black w-5 h-5 rounded-lg bg-white checked:bg-slate-500 align-middle"  type="checkbox" name="Trigonometric Functions with x^n" />
+          Trigonometric Functions with x^n
+        </label>
+        <label className="bg-gradient-to-tr from-red-600 to-orange-600 rounded text-lg p-3 m-2 mt-12 text-white">
+          <input className="appearance-none mr-4 border-2 border-black w-5 h-5 rounded-lg bg-white checked:bg-slate-500 align-middle"  type="checkbox" name="Trigonometric Functions with e^ax" />
+          Trigonometric Functions with e^ax
+        </label>
+        <label className="bg-gradient-to-tr from-red-600 to-orange-600 rounded text-lg p-3 m-2 mt-12 text-white">
+          <input className="appearance-none mr-4 border-2 border-black w-5 h-5 rounded-lg bg-white checked:bg-slate-500 align-middle"  type="checkbox" name="Trigonometric Functions with x^n and e^ax" />
+          Trigonometric Functions with x^n and e^ax
+        </label>
+        <label className="bg-gradient-to-tr from-red-600 to-orange-600 rounded text-lg p-3 m-2 mt-12 text-white">
+          <input className="appearance-none mr-4 border-2 border-black w-5 h-5 rounded-lg bg-white checked:bg-slate-500 align-middle"  type="checkbox" name="Hyperbolic Functions" />
+          Hyperbolic Functions
+        </label>
+      </div>
     </div>
   );
 }
