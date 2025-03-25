@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import CheckBox from "./check-box";
+import { MathJaxContext } from "better-react-mathjax";
+import Link from "next/link";
 
 interface checkBoxData {
   id: number;
@@ -18,9 +20,9 @@ export default function Home() {
     {id: 3, label: "Logarithms"},
     {id: 4, label: "Exponentials"},
     {id: 5, label: "Trigonometric Functions"},
-    {id: 6, label: "Trigonometric Functions with x^n"},
-    {id: 7, label: "Trigonometric Functions with e^ax"},
-    {id: 8, label: "Trigonometric Functions with x^n and e^ax"},
+    {id: 6, label: "Trigonometric Functions with \\(x^n\\)"},
+    {id: 7, label: "Trigonometric Functions with \\(e^{ax}\\)"},
+    {id: 8, label: "Trigonometric Functions with \\(x^n\\) and \\(e^{ax}\\)"},
     {id: 9, label: "Hyperbolic Functions"}
   ];
  
@@ -36,20 +38,25 @@ export default function Home() {
   };
 
   return (
-    <div className="h-screen bg-slate-300">
-      <h1 className="text-center py-8 text-6xl text-white font-serif font-extrabold italic bg-gradient-to-r from-rose-500 from-10% via-red-700 via-50% to-rose-500 to-90%" >INTEGRAL FLASHCARDS</h1>
-      <div className="text-center text-xl font-serif m-4 underline decoration-black decoration-2">Table of Integrals taken from
-        <a className="italic font-semibold" href="https://www.physics.umd.edu/hep/drew/IntegralTable.pdf" target="_blank"> HERE</a>
+    <MathJaxContext>
+      <div className="h-screen bg-slate-300">
+        <h1 className="text-center py-8 text-6xl text-white font-serif font-extrabold italic bg-gradient-to-r from-rose-500 from-10% via-red-700 via-50% to-rose-500 to-90%" >INTEGRAL FLASHCARDS</h1>
+        <div className="text-center text-xl font-serif m-4 underline decoration-black decoration-2">Table of Integrals taken from
+          <a className="italic font-semibold" href="https://www.physics.umd.edu/hep/drew/IntegralTable.pdf" target="_blank"> HERE</a>
+        </div>
+        <h3 className="pt-24 text-center text-2xl font-semibold font-serif">Select Which Kind of Integrals to Show</h3>
+        <div className="grid grid-cols-5 content-stretch justify-items-stretch place-items-stretch py-12 mx-24 my-2 bg-white">
+          {Checkboxes.map((checkbox) => 
+            <CheckBox  key={checkbox.id} label={checkbox.label} onClick={() => handleClick(checkbox.id)} isChecked={checked[checkbox.id]} />
+          )}
+        </div>
+        <div className="flex justify-center mt-4">
+          <Link href={"/flashcards"} className="bg-gradient-to-tr from-rose-700 to-orange-700 text-white px-4 py-2 rounded-lg font-serif font-medium text-3xl"> STUDY </Link>
+        </div>
+        <a href="https://github.com/MiguelZ13" target="_blank">
+          <img className="h-12 w-12 my-32 mx-6" src="/github-mark.svg" alt="Github Logo" />
+        </a>
       </div>
-      <h3 className="pt-24 text-center text-2xl font-semibold font-serif">Select Which Kind of Integrals to Show</h3>
-      <div className="grid grid-cols-5 content-stretch justify-items-stretch place-items-stretch py-12 mx-24 my-2 bg-white">
-        {Checkboxes.map((checkbox) => 
-          <CheckBox  key={checkbox.id} label={checkbox.label} isChecked={checked[checkbox.id]} />
-        )}
-      </div>
-      <a href="https://github.com/MiguelZ13" target="_blank">
-        <img className="h-12 w-12 my-36 mx-6" src="/github-mark.svg" alt="Github Logo" />
-      </a>
-    </div>
+    </MathJaxContext>
   );
 }
