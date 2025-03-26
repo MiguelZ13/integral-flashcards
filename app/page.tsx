@@ -39,9 +39,8 @@ export default function Home() {
 
   return (
     <MathJaxContext>
-      <div className="h-screen bg-slate-300">
-        <h1 className="text-center py-8 text-6xl text-white font-serif font-extrabold italic bg-gradient-to-r from-rose-500 from-10% via-red-700 via-50% to-rose-500 to-90%" >INTEGRAL FLASHCARDS</h1>
-        <div className="text-center text-xl font-serif m-4 underline decoration-black decoration-2">Table of Integrals taken from
+      <div className="h-full bg-slate-300">
+        <div className="text-center text-xl font-serif mx-4 mb-2 underline decoration-black decoration-2">Table of Integrals taken from
           <a className="italic font-semibold" href="https://www.physics.umd.edu/hep/drew/IntegralTable.pdf" target="_blank"> HERE</a>
         </div>
         <h3 className="pt-24 text-center text-2xl font-semibold font-serif">Select Which Kind of Integrals to Show</h3>
@@ -50,12 +49,16 @@ export default function Home() {
             <CheckBox  key={checkbox.id} label={checkbox.label} onClick={() => handleClick(checkbox.id)} isChecked={checked[checkbox.id]} />
           )}
         </div>
-        <div className="flex justify-center mt-4">
-          <Link href={"/flashcards"} className="bg-gradient-to-tr from-rose-700 to-orange-700 text-white px-4 py-2 rounded-lg font-serif font-medium text-3xl"> STUDY </Link>
+        <div className="flex flex-col h-auto mt-4">
+          <div className="flex-1 flex justify-center">
+            <Link href={"/flashcards"} className="bg-gradient-to-tr from-rose-700 to-orange-700 text-white px-4 py-2 rounded-lg font-serif font-medium text-3xl"> STUDY </Link>
+          </div>
+          <div className="flex-1 flex justify-start">
+            <Link href="https://github.com/MiguelZ13" target="_blank">
+              <img className="h-12 w-12 mt-32 mb-12 mx-6" src="/github-mark.svg" alt="Github Logo" />
+            </Link>
+          </div>
         </div>
-        <a href="https://github.com/MiguelZ13" target="_blank">
-          <img className="h-12 w-12 my-32 mx-6" src="/github-mark.svg" alt="Github Logo" />
-        </a>
       </div>
     </MathJaxContext>
   );
