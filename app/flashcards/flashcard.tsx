@@ -12,8 +12,8 @@ interface flashCardProps {
 
 export default function FlashCard({integral, solution, facedown, onClick}: flashCardProps) {
     return (
-        <span className=" inline-flex px-72 py-36 bg-red-600 rounded-lg" onClick={onClick}>
-            <MathJax className="font-serif text-white text-xl">{facedown ? integral : solution}</MathJax>
+        <span className=" inline-flex px-72 py-48 bg-red-600 rounded-lg" onClick={onClick}>
+            <MathJax className="font-serif text-white text-2xl">{facedown ? integral : solution}</MathJax>
         </span>
     );
 }

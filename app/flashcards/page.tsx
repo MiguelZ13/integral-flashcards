@@ -58,7 +58,7 @@ export default function Home() {
 
     return (
         <MathJaxContext>
-            <div className="py-64 bg-slate-300 flex justify-evenly items-center">
+            <div className="pt-36 pb-64 bg-slate-300 flex justify-evenly items-center">
                 <button className="bg-black px-24 py-12 text-white" onClick={handleBackClick}>
                     <img src="/back-arrow.svg" alt="prev" />
                 </button>
