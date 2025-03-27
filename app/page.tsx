@@ -16,7 +16,7 @@ export default function Home() {
   const [checked, setChecked] = useState(Array(10).fill(true));
 
   const [cards, setCards] = useState(0);
-
+  
   // categories for integrals
   const Checkboxes: checkBoxData[] = [
     {id: 0, label: "Basic Forms"},
